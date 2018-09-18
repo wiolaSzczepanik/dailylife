@@ -5,13 +5,36 @@ import './App.css';
 class App extends Component {
     state = {
         isLoading: true,
-        tasks: []
+        tasks: [],
     };
 
-    async componentDidMount() {
+    async loadTasks() {
         const response = await fetch('/api/tasks/');
         const body = await response.json();
-        this.setState({ tasks: body, isLoading: false });
+        this.setState({ tasks: body, isLoading: false});
+    }
+
+    async componentDidMount() {
+        return this.loadTasks();
+    }
+
+    async handleUsernameSubmission(e) {
+        if(e) e.preventDefault();
+        const task = this.refs.description.value;
+
+        const response = await fetch('/api/tasks/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                description: task
+            })
+        });
+        const body = await response.json();
+        console.log('Added task ', body);
+        return this.loadTasks();
     }
 
     render() {
@@ -35,6 +58,13 @@ class App extends Component {
                     </div>
                 )}
             </p>
+              <p>
+                  <h2>Add task</h2>
+                  <form onSubmit={this.handleUsernameSubmission.bind(this)}>
+                      <input placeholder="enter task" ref="description" />
+                      <input type="submit" value="Add task" />
+                  </form>
+              </p>
           </div>
         );
     }
