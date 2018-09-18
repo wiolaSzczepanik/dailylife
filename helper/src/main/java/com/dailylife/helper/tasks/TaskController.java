@@ -3,10 +3,7 @@ package com.dailylife.helper.tasks;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URI;
@@ -32,7 +29,7 @@ public class TaskController {
     }
 
     @PostMapping("/")
-    ResponseEntity<Task> createTask(@Valid Task task) throws URISyntaxException {
+    ResponseEntity<Task> createTask(@Valid @RequestBody Task task) throws URISyntaxException {
 
         log.info("Request to create group: {}", task);
         Task result = taskRepository.save(task);

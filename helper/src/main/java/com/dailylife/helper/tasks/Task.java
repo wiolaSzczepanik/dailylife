@@ -5,7 +5,6 @@ import java.util.Objects;
 
 public class Task {
 
-    @NotEmpty
     private String id;
 
     @NotEmpty
