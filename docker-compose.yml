@@ -1,0 +1,13 @@
+version: '2'
+services:
+    helper:
+        container_name: helper
+        build: helper
+        ports:
+            - 8080:8080
+    ui:
+        container_name: ui
+        build: helper-ui
+        ports:
+            - 3000:3000
+            - 35729:35729
