@@ -2,10 +2,7 @@ package com.dailylife.helper.tasks;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 @Repository
 public class TaskRepository {
@@ -26,5 +23,16 @@ public class TaskRepository {
     private String generateId() {
         Random random = new Random();
         return String.valueOf(random.nextInt());
+    }
+
+    public void delete(String id) {
+
+        Iterator<String> task = tasks.keySet().iterator();
+        while (task.hasNext()) {
+            String key = task.next();
+            if (key.equals(id)) {
+                task.remove();
+            }
+        }
     }
 }
