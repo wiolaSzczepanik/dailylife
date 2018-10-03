@@ -23,6 +23,9 @@ you need to stop the script and run again when you introduce changes to the code
 run the backend first with "run just backend" instruction, then
 
 cd helper-ui
+
+yarn
+
 yarn start
 
 access UI at http://localhost:3000/ in a browser, 
