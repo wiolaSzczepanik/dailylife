@@ -37,6 +37,17 @@ class App extends Component {
         return this.loadTasks();
     }
 
+    async handleDeleteClick(id) {
+
+        await fetch('/api/tasks/' + id, {
+            method: 'DELETE'
+        });
+
+        console.log('Deleted task ' + id);
+        await this.loadTasks();
+    }
+
+
     render() {
         const {tasks, isLoading} = this.state;
 
@@ -54,7 +65,7 @@ class App extends Component {
                 <h2>Task list</h2>
                 {tasks.map(task =>
                     <div key={task.id}>
-                        {task.description}
+                        {task.description} <a href="#" onClick={() => this.handleDeleteClick(task.id)}>Delete</a>
                     </div>
                 )}
             </p>
