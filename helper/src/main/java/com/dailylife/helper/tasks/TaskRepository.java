@@ -26,13 +26,6 @@ public class TaskRepository {
     }
 
     public void delete(String id) {
-
-        Iterator<String> task = tasks.keySet().iterator();
-        while (task.hasNext()) {
-            String key = task.next();
-            if (key.equals(id)) {
-                task.remove();
-            }
-        }
+        tasks.remove(id);
     }
 }
