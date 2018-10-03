@@ -47,4 +47,9 @@ public class TaskController {
         taskRepository.delete(id);
     }
 
+    @PutMapping("/{id}")
+    void markTask(@PathVariable String id){
+        taskRepository.mark(id);
+    }
+
 }

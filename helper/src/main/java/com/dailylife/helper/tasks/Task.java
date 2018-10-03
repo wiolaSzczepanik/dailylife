@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Task {
 
     private String id;
-
+    private boolean isDone = false;
     @NotEmpty
     private String description;
 
@@ -27,6 +27,14 @@ public class Task {
         this.id = id;
     }
 
+    public boolean isDone() {
+        return isDone;
+    }
+
+    public void setDone(boolean done) {
+        isDone = done;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -45,6 +53,7 @@ public class Task {
     public String toString() {
         return "Task{" +
                 "id='" + id + '\'' +
+                "isDone='" + isDone + '\''+
                 ", description='" + description + '\'' +
                 '}';
     }
