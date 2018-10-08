@@ -28,4 +28,15 @@ public class TaskRepository {
     public void delete(String id) {
         tasks.remove(id);
     }
+
+
+    public void mark(String id) {
+        Iterator<String> task = tasks.keySet().iterator();
+        while (task.hasNext()) {
+            String key = task.next();
+            if (key.equals(id)) {
+                tasks.get(key).setDone(true);
+            }
+        }
+    }
 }
