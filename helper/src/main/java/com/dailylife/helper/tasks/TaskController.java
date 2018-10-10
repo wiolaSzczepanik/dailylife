@@ -48,6 +48,7 @@ public class TaskController {
 
     @PutMapping("/{id}")
     void markTask(@PathVariable String id){
+        log.info("Request to mark task by id: {}", id);
         taskRepository.mark(id);
     }
 
