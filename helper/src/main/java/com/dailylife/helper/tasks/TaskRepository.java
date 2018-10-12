@@ -26,12 +26,12 @@ public class TaskRepository {
     }
 
     public void delete(String id) {
+
         tasks.remove(id);
     }
-
 
     public void mark(String id) {
         tasks.get(id).setDone(true);
         }
-
+        
 }
