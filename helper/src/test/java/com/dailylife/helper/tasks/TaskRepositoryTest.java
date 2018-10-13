@@ -11,7 +11,7 @@ class TaskRepositoryTest {
 
 
     @Test
-    public void findAllTest(){
+    public void testRepositoryWithOneElement(){
 
         TaskRepository taskRepository = new TaskRepository();
         Task task = new Task();
@@ -22,5 +22,14 @@ class TaskRepositoryTest {
         assertEquals(1, tasks.size());
         assertEquals(task,tasks.toArray()[0]);
     }
+
+    @Test
+    public void testEmptyRepository(){
+        TaskRepository taskRepository = new TaskRepository();
+        Collection<Task> tasks = taskRepository.findAll();
+        assertEquals(0,tasks.size());
+    }
+
+    
 
 }
