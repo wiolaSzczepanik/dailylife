@@ -30,3 +30,15 @@ yarn start
 
 access UI at http://localhost:3000/ in a browser, 
 you can modify code and just reload the page to see changes
+
+## run database
+
+docker-compose up -d db adminer
+
+This starts both postgres and a administration UI. Postgres is available on port 5432. User: postgres, password: example. 
+
+UI is accessible at: http://localhost:8081/
+
+To stop the database:
+
+docker-compose stop db adminer
