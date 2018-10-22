@@ -26,7 +26,7 @@ public class Task {
         this.id = id;
     }
 
-    public boolean getDone() {return isDone;}
+    public boolean isDone() {return isDone;}
 
     public void setDone(boolean done) {
         isDone = done;
