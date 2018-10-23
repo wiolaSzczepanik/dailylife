@@ -7,10 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TaskRepositoryTest {
 
-
     @Test
     public void testRepositoryWithOneElement(){
-
         TaskRepository taskRepository = new TaskRepository();
         Task task = new Task();
 
