@@ -76,6 +76,7 @@ class App extends Component {
                 {tasks.map(task =>
                     <div key={task.id}>
                         {task.description} <a href="#" onClick={() => this.handleDeleteClick(task.id)}>Delete</a>
+                        <a href="#" onClick={() => this.handleMarkClick(task.id)}> Done</a>
                     </div>
                 )}
             </p>
