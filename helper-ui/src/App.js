@@ -47,6 +47,16 @@ class App extends Component {
         await this.loadTasks();
     }
 
+    async handleMarkClick(id) {
+
+        await fetch('/api/tasks/' + id, {
+            method: 'PUT'
+        });
+
+        console.log('Mark task ' + id);
+        await this.loadTasks();
+    }
+
 
     render() {
         const {tasks, isLoading} = this.state;
