@@ -1,4 +1,4 @@
-In cooperation with @Mequrel.
+In cooperation with my mentor @Mequrel.
 
 ## prerequisites
 
