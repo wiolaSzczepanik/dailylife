@@ -1,3 +1,5 @@
+In cooperation with @Mequrel.
+
 ## prerequisites
 
 install docker (https://docs.docker.com/docker-for-windows/ or  https://docs.docker.com/install/linux/docker-ce/ubuntu/)
