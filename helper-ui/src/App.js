@@ -47,6 +47,16 @@ class App extends Component {
         await this.loadTasks();
     }
 
+    async handleMarkClick(id) {
+
+        await fetch('/api/tasks/' + id, {
+            method: 'PUT'
+        });
+
+        console.log('Mark task ' + id);
+        await this.loadTasks();
+    }
+
 
     render() {
         const {tasks, isLoading} = this.state;
@@ -66,7 +76,9 @@ class App extends Component {
                 {tasks.map(task =>
                     <div key={task.id}>
                         {task.description} <a href="#" onClick={() => this.handleDeleteClick(task.id)}>Delete</a>
+                        <a href="#" onClick={() => this.handleMarkClick(task.id)}> Done</a>
                     </div>
+
                 )}
             </p>
               <p>

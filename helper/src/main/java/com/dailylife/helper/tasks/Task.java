@@ -18,7 +18,6 @@ public class Task {
         this.description = description;
     }
 
-
     public String getId() {
         return id;
     }
@@ -27,9 +26,7 @@ public class Task {
         this.id = id;
     }
 
-    public boolean isDone() {
-        return isDone;
-    }
+    public boolean isDone() {return isDone;}
 
     public void setDone(boolean done) {
         isDone = done;

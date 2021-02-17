@@ -29,9 +29,8 @@ public class TaskRepository {
         tasks.remove(id);
     }
 
-
     public void mark(String id) {
         tasks.get(id).setDone(true);
-        }
+    }
 
 }
